@@ -1,5 +1,5 @@
 name: db_demo
-description: "A new Flutter project."
+description: "A new Flutter project. Flutter 通过 FVM 使用 3.24.3"
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -27,4 +27,3 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
-
