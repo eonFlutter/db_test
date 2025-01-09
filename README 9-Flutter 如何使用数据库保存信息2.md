@@ -173,26 +173,22 @@ class XNameModel extends BaseModel
 
 继承BaseModel之后会提示需要实现指定方法：
 ```dart
-// ----- about db -----
-
-	@override
-	String get tableName => 't_name'; // 表名
-
-	@override
-	List<String> get uniqueList => ['valueNo']; // 唯一字段
-
-	@override
+  // ----- about db -----
+  @override
   fromMap(Map<String, dynamic> map) {
-		XNameModel model = $XNameModelFromJson(map);
-		model.id = map.containsKey('id') ? map['id'] as int? : 0;
-		return model;
+    XNameModel model = $XNameModelFromJson(map);
+    model.id = map.containsKey('id') ? map['id'] as int? : null;
+    return model;
   }
+  
+  @override
+  String get tableName => 't_name'; // 表名
 
   @override
   Map<String, dynamic> toMap() {
-		Map<String, dynamic> map = $XNameModelToJson(this);
-		map['id'] = id ?? 0;
-		return map;
+    Map<String, dynamic> map = $XNameModelToJson(this);
+    map['id'] = id;
+    return map;
   }
 
 ```

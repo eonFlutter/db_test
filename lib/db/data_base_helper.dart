@@ -25,13 +25,12 @@ class DatabaseHelper {
   }
 
   Future<void> execute(String sql, [List<Object?>? arguments]) async {
-    // final db = await database;
-    final db = await DatabaseHelper().database;
+    final db = await database;
     await db.execute(sql, arguments);
   }
 
   Future<List<Map<String, dynamic>>> query(String sql, [List<Object?>? arguments]) async {
-    final db = await DatabaseHelper().database;
+    final db = await database;
     return await db.rawQuery(sql, arguments);
   }
 }
